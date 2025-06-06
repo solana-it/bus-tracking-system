@@ -22,6 +22,11 @@ export default defineConfig({
         ]
       : []),
   ],
+  server: {
+    proxy: {
+      '/api': 'http://localhost:5000', // Local backend URL for development
+    },
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "client", "src"),
